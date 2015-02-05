@@ -1,0 +1,7 @@
+﻿../story/whatisnext.htm?../experiments/story.txt		           All Experiments
+html/index.html								                       HTML 
+html/htmlform.html                                                 Html Form elements
+css/CssExperiments.html                                            Css TryOut
+css/responsive.html                                                Css responsive
+bootstrap/bootstrap-navs-slides.html                               Bootstrap:Nav,slides and tables
+bootstrap/bootstrap-popup-popover.html                             Bootstrap:modal,pop-up and pop-over     
