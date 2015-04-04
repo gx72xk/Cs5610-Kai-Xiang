@@ -1,0 +1,41 @@
+﻿        span {
+            font-size: 25px;
+            margin: 10px;
+            font-family: Consolas;
+        }
+
+        .thead {
+            font-size: 25px;
+            font-family: 'Comic Sans MS';
+        }
+
+        .text {
+            padding-left: 40px;
+            font-size: 30px;
+        }
+        td{
+            text-align:center;font-size:27px;
+            font-family: Consolas;
+        }
+        th{
+            text-align:center;
+        }
+        .input{
+            height:100px;
+            width:400px;
+        }
+        .time{
+            margin-top:80px;font-family:fantasy;
+        }
+        h1{
+            font-family:Century;
+            font-weight:bolder;
+        }
+        p{
+            font-size:20px;
+            text-align:justify;
+            font-family:Calibri;
+        }
+        hr{
+            border:1px solid #696969 ;
+        }

@@ -1,0 +1,77 @@
+﻿
+<div ng-show="visible">
+    <div class="time">
+        <h2>{{city.cityname}}<a class="btn btn-xs btn-warning col-sm-offset-1" role="button" ng-click="addToFavorites(cityname)" id="favorite"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></h2>
+    </div>
+    <div class="time">
+        <h2>Current</h2>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead">
+                <tr>
+                    <th>Weather</th>
+                    <th>Temperature(℃)</th>
+                    <th>Feels Like(℃)</th>
+                    <th>Wind Speed(miles)</th>
+                </tr>
+            </thead>
+            <tr>
+                <td><img src="{{city.currentcondition.weatherIconUrl[0].value}}" height="50" /><span>{{city.currentcondition.weatherDesc[0].value}}</span></td>
+                <td>{{city.currentcondition.temp_C}}</td>
+                <td>{{city.currentcondition.FeelsLikeC}}</td>
+                <td>{{city.currentcondition.windspeedMiles}}</td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="time">
+        <h2>Today</h2>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead">
+                <tr>
+                    <th>Weather</th>
+                    <th>Mintemp(℃)</th>
+                    <th>Maxtemp(℃)</th>
+                    <th>Wind Speed(miles)</th>
+                    <th>Sunrise</th>
+                    <th>Sunset</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="{{city.today.hourly[0].weatherIconUrl[0].value}}" height="50" /> <span>{{city.today.hourly[0].weatherDesc[0].value}}</span></td>
+                    <td>{{city.today.mintempC}}</td>
+                    <td>{{city.today.maxtempC}}</td>
+                    <td>{{city.today.hourly[0].windspeedMiles}}</td>
+                    <td>{{city.today.astronomy[0].sunrise}}</td>
+                    <td>{{city.today.astronomy[0].sunset}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="time">
+        <h2>Tomorrow</h2>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead">
+                <tr>
+                    <th>Weather</th>
+                    <th>Mintemp(℃)</th>
+                    <th>Maxtemp(℃)</th>
+                    <th>Wind Speed(miles)</th>
+                    <th>sunrise</th>
+                    <th>sunset</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="{{city.tomorrow.hourly[0].weatherIconUrl[0].value}}" height="50" /> <span>{{city.tomorrow.hourly[0].weatherDesc[0].value}}</span></td>
+                    <td>{{city.tomorrow.mintempC}}</td>
+                    <td>{{city.tomorrow.maxtempC}}</td>
+                    <td>{{city.tomorrow.hourly[0].windspeedMiles}}</td>
+                    <td>{{city.tomorrow.astronomy[0].sunrise}}</td>
+                    <td>{{city.tomorrow.astronomy[0].sunset}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr />
+</div>

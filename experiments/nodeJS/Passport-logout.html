@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>Description</h1>
+        <p style="font-size:20px;text-align:justify;font-family:'Comic Sans MS'">
+            In this Experiment, I am logging out the user and clear the authentication of the user.
+        </p><hr />
+
+        <a href="http://nodejs-gx72xk.rhcloud.com/signup.html#/home" style="font-size:30px;">Link to Openshift</a>
+
+        <div>
+            <h1>Code Snippet</h1>
+            <h3>PassportJS</h3>
+            <p><code>/logout</code> log out user and cancel the authentication</p>
+            <pre> 
+   app.post('/logout', function (req, res) {
+    req.logOut();
+    res.send(200);
+});                                                                       
+</pre>
+
+            <h3>AngularJs</h3>
+            <pre> 
+                    $scope.logout = function () {
+        $http.post("/logout")
+        .success(function () {
+            $rootScope.currentUser = null;
+            $location.url("/home");
+        });
+    };
+</pre>
+        </div>
+        <div>
+            <div class="panel-footer">
+                <div class="container">
+                    <div class="footer">
+                        <label>References</label><br />
+                        <a href="https://angularjs.org/">Angular</a><br />
+                        <a href="http://passportjs.org/">PassportJS</a><br />
+                    </div>
+                    <div class="footer">
+                        <label>Source Code</label><br />
+                        <a href="https://github.com/gx72xk/Cs5610-Kai-Xiang">GitHub-openshift(under openshift/nodejs)</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

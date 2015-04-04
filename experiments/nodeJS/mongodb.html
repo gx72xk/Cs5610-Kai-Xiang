@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link  href="css/bootstrap.min.css"  rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Decription</h1>
+        <p>In this intergrated experiments I have tried to built nodejs with mongodb and push them onto openshift.All the method works fine locally except the <strong>PUT</strong>,
+        I have follow the advice that I had form the piazza and fixed it, there are two way to update the data, use the <code>upsert</code>,or find the data first and rewrite it then save.
+        Here I am using the second way to do that.
+        </p>
+        <a href="http://nodejs-gx72xk.rhcloud.com/mongodb.html"> Link to My Openshift with Mongo</a>
+        <h2>Code Snippet</h2>
+        <h3>mongoose 'put method'</h3>
+        <pre>
+            app.put('/api/people/:id', function (req, res) {
+    return PeopleModel.findById(req.params.id, function (err, people) {
+        people.conference = req.body.conference;
+     people.city = req.body.city;
+        people.team = req.body.team;
+       people.name = req.body.name;    
+        return people.save(function (err) { 
+           if (!err) {
+                console.log("updated");
+               PeopleModel.find(function (err, data) {
+                   res.json(data);
+               });
+           } else {
+               console.log(err);
+           }
+           
+        });
+    });
+});                                                                                      
+</pre>
+    </div>
+    <div class="container">
+        <div class="panel-footer">
+            <div class="container">
+                <div class="footer">
+                    <label>References</label><br />
+                    <a href="http://www.w3schools.com/">W3school</a><br />
+                    <a href="http://www.mongodb.org/">MongoDB</a><br />
+                </div>
+                <div class="footer">
+                    <label>Source Code</label><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/nodeJS/js/server.js">server.js</a><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/nodeJS/js/people.js">people.js</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

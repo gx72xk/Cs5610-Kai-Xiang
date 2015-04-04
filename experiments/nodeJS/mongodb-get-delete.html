@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link  href="css/bootstrap.min.css"  rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Decription</h1>
+        <p style="font-size:20px;text-align:justify;font-family:'Comic Sans MS'">
+            In this experiment I have tried to retrieve and delete data from mongodb through moogoose.
+        </p>
+        <a href="http://nodejs-gx72xk.rhcloud.com/mongodb.html"> Link to My Openshift with Mongo</a>
+        <h2>Code Snippet</h2>
+        <h3>Get and Delete Method</h3>
+        <pre>
+app.get("/api/people", function (req, res) {
+    PeopleModel.find(function (err, data) {
+        res.json(data);
+    });
+});
+app.get("/api/people/:id", function (req, res) {
+    PeopleModel.findById(req.params.id, function (err, data) {
+        res.json(data);
+    })；
+
+
+            app.delete("/api/people/:id", function (req, res) {
+    PeopleModel.findById(req.params.id, function (err, doc) {
+        doc.remove() ;
+        PeopleModel.find(function (err, data) {
+            res.json(data);
+        });
+    });
+});                                                                       
+</pre>
+        <h3>Angular</h3>
+        <pre>
+        app.controller("mongoAppController", function ($scope, $http) {
+        $http.get("/api/people")
+        .success(function (response) {
+        $scope.people = response;
+        });
+        $scope.remove = function (id) {
+        $http.delete("/api/people/" + id)
+        .success(function (response) {
+        $scope.people = response;
+        });
+        };                                                                 
+</pre>
+    </div>
+    <div class="container">
+        <div class="panel-footer">
+            <div class="container">
+                <div class="footer">
+                    <label>References</label><br />
+                    <a href="http://www.w3schools.com/">W3school</a><br />
+                    <a href="http://www.mongodb.org/">MongoDB</a><br />
+                </div>
+                <div class="footer">
+                    <label>Source Code</label><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/nodeJS/js/server.js">server.js</a><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/nodeJS/js/people.js">people.js</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
