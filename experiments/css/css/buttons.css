@@ -6,15 +6,24 @@
 	
 	/* Overriding the default underline styling of the links */
 	text-decoration:none !important;
+<<<<<<< HEAD
     text-align:center;
 	white-space:nowrap;
 	
 	display:block;
+=======
+	white-space:nowrap;
+	
+	display:inline-block;
+>>>>>>> 6c0ff7d1a8364fd4eb44a7dc7d3a5b4ffb5498ae
 	vertical-align:baseline;
 	position:relative;
 	cursor:pointer;
 	padding:10px 20px;
+<<<<<<< HEAD
     
+=======
+>>>>>>> 6c0ff7d1a8364fd4eb44a7dc7d3a5b4ffb5498ae
 	
 	background-repeat:no-repeat;
 

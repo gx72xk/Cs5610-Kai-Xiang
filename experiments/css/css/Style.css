@@ -95,7 +95,11 @@
 
         .last {
             position: fixed;
+<<<<<<< HEAD
             bottom: 20%;
+=======
+            bottom: 30%;
+>>>>>>> 6c0ff7d1a8364fd4eb44a7dc7d3a5b4ffb5498ae
             right: 10%; /* Positions 50% from right (right edge will be at center) */
             width: 200px;
 
@@ -103,20 +107,32 @@
         .first {
                         
             position: fixed;
+<<<<<<< HEAD
             bottom: 40%;
+=======
+            bottom: 50%;
+>>>>>>> 6c0ff7d1a8364fd4eb44a7dc7d3a5b4ffb5498ae
             right: 10%; /* Positions 50% from right (right edge will be at center) */
             width: 200px;
         }
         .second {
             position: fixed;
+<<<<<<< HEAD
             bottom: 60%;
+=======
+            bottom: 70%;
+>>>>>>> 6c0ff7d1a8364fd4eb44a7dc7d3a5b4ffb5498ae
             right: 10%; /* Positions 50% from right (right edge will be at center) */
             width: 200px;
         }
    
+<<<<<<< HEAD
            .github {
             position: fixed;
             bottom: 60%;
             left: 10%; /* Positions 50% from right (right edge will be at center) */
             width: 200px;
         }
+=======
+   
+>>>>>>> 6c0ff7d1a8364fd4eb44a7dc7d3a5b4ffb5498ae

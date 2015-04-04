@@ -4,6 +4,7 @@ html/htmlform.html                                                 Html Form ele
 css/CssExperiments.html                                            Css TryOut
 css/responsive.html                                                Css responsive
 bootstrap/bootstrap-navs-slides.html                               Bootstrap:Nav,slides and tables
+<<<<<<< HEAD
 bootstrap/bootstrap-popup-popover.html                             Bootstrap:modal,pop-up and pop-over
 jQueryUI/jQueryUI.html                                             week4-jQueryDraggable
 jQueryUI/jQuery-sortable.html                                      week4-jQuerysortable
@@ -31,3 +32,6 @@ nodeJS/Passport-Session.html                                       week8-Passpor
 nodeJS/Passport-logout.html                                        week8-Passport-logout
 nodeJS/AngularJs-FormValidation.html                               week8-Passport-FormValidation
 jQueryUI/Chart.html                                                  week9-Radar Chart
+=======
+bootstrap/bootstrap-popup-popover.html                             Bootstrap:modal,pop-up and pop-over     
+>>>>>>> 6c0ff7d1a8364fd4eb44a7dc7d3a5b4ffb5498ae
