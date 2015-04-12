@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    
+    <script src="js/Chart.js"></script>
+    <script src="js/data.js"></script>
+   
+</head>
+<body>
+    <div class="container">
+       <h1>Description</h1>
+        <p style="font-size:20px;font-family:'Comic Sans MS'">I am doing a Chart which I will use to show the result of average temp in each city.</p>
+        <canvas id="mychart" width="400" height="400"></canvas>
+        <div>
+        <h1>Code Snippet</h1>
+        <h3>jQuery</h3>
+
+        <pre>             
+$(function () {
+    
+    var ctx = $("#mychart").get(0).getContext("2d");
+  
+   
+    var data = {
+        labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October","Novermber","December"],
+        datasets: [
+            {
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                data: [65, 59, 90, 81, 56, 55, 40,35,30,27,20,19]
+            },
+            {
+                fillColor: "rgba(151,187,205,0.5)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                data: [28, 48, 40, 19, 96, 27, 100,80,56,77,89,90]
+            }
+        ]
+    }
+    //This will get the first returned node in the jQuery collection.
+    var myChart = new Chart(ctx).Line(data, {
+        pointLabelFontSize: 15,
+        pointLabelFontColor: "#FF5511",
+        pointLabelFontStyle: "bolder",
+        scaleLineWidth: 2,
+        scaleLineColor: "rgba(0,0,0,.1)"
+        
+    });
+    
+  
+});                              
+                              
+</pre>
+
+
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="panel-footer">
+            <div class="container">
+                <div class="footer">
+                    <label>References</label><br />
+                    <a href="http://www.w3schools.com/">W3school</a><br />
+                    
+                </div>
+                <div class="footer">
+                    <label>Source Code</label><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/others/chart.html">chart.html</a><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/others/js/data.js">data.js</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

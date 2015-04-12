@@ -245,4 +245,9 @@ nav{
      height:510px;
  }
 }
-                               
+.qwe{
+    font-family:'Segoe Script';
+    color:#ae1de8;
+        
+     text-shadow:0 0 5px #CCCCCC, 0 0 10px #CCCCCC, 0 0 15px #CCCCCC, 0 0 20px red, 0 0 25px red, 0 0 30px red, 0 0 50px red, 0 0 80px red, 0 0 100px red, 0 0 150px red;
+}                               

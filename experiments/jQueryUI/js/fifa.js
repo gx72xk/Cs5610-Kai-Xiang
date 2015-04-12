@@ -38,22 +38,4 @@ $(function () {
     
     console.log("123");
 
-    //$.ajax({
-    //    url: "http://tools.fifaguide.com/api/topten/pace",
-        
-    //     data: data,
-    //      contentType: "application/javascript",
-    //    dataType: "jsonp",
-    //     crossDomain:true,
-    //     jsonp: 'callback',
-    //     jsonpCallback: 'jsonpCallback',
-    //    success: function (data) {
-    //        callback(data);
-    //        console.log(data);
-    //    }
-    //});
-
-    //function response(players) {
-    //    console.log(players);
-    //};
 });

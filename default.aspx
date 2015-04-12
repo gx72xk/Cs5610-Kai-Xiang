@@ -46,17 +46,19 @@
     <div class="container">
         <div class="background">
             <div class="first">
-                <button class="button big green"><a href="blog/" target="_blank">Blog</a></button>
+                <a href="blog/" target="_blank" class="button big green" role="button">Blog</a>
             </div>
             <div class="second">
 
-                <button class="button big blue">Project</button>
+                <a class="button big blue" role="button">Project</a>
             </div>
             <div class="last">
                 
-                <button class="button big orange"><a href="story/index.htm?../experiments/story.txt" target="_blank">Experiments</button>
+               <a href="story/index.htm?../experiments/story.txt" target="_blank" class="button big orange" role="button">Experiments</a>
             </div>
-
+<div class="github">
+    <a href="https://github.com/gx72xk/Cs5610-Kai-Xiang" target="_blank" class="button big gray"role="button">My Github</a>
+</div>
         </div>
     </div>
 

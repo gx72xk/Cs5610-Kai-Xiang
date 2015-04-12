@@ -1,11 +1,19 @@
 ﻿../story/whatisnext.htm?../experiments/story.txt		           All Experiments
-html/index.html								                       HTML 
-html/htmlform.html                                                 Html Form elements
-css/CssExperiments.html                                            Css TryOut
-css/responsive.html                                                Css responsive
-bootstrap/bootstrap-navs-slides.html                               Bootstrap:Nav,slides and tables
-<<<<<<< HEAD
-bootstrap/bootstrap-popup-popover.html                             Bootstrap:modal,pop-up and pop-over
+html/index.html								                       week1-HTML background
+html/htmlform.html                                                 week1-Html Form elements
+html/iframe.html                                                   week1-iframe
+html/datadetail.html						                       week1-datalist and details
+html/canvas.html                                                   week1-canvas
+css/css-text.html                                                  week2-Css Text 
+css/css-styledPic.html                                             week2-Css pic
+css/css-navbar.html                                                week2-Css NavBar
+css/responsive.html                                                week2-Css responsive
+bootstrap/bootstrap-pop-over.html                                  week2-Bootstrap:pop-over
+bootstrap/bootstrap-navs.html                                      week3-Bootstrap:Nav
+bootstrap/bootstrap-table.html                                     week3-Bootstrap:table
+bootstrap/bootstrap-slider.html                                    week3-Bootstrap:slider
+bootstrap/bootstrap-popup.html                                     week3-Bootstrap:popup
+bootstrap/bootstrap-collapse.html                                  week3-Bootstrap:collapse
 jQueryUI/jQueryUI.html                                             week4-jQueryDraggable
 jQueryUI/jQuery-sortable.html                                      week4-jQuerysortable
 AngularJS/AngularJS.html                                           week4-Angular:weather dataI
@@ -31,7 +39,13 @@ nodeJS/Passport-Register.html                                      week8-Passpor
 nodeJS/Passport-Session.html                                       week8-Passport-Session
 nodeJS/Passport-logout.html                                        week8-Passport-logout
 nodeJS/AngularJs-FormValidation.html                               week8-Passport-FormValidation
-jQueryUI/Chart.html                                                  week9-Radar Chart
-=======
-bootstrap/bootstrap-popup-popover.html                             Bootstrap:modal,pop-up and pop-over     
->>>>>>> 6c0ff7d1a8364fd4eb44a7dc7d3a5b4ffb5498ae
+jQueryUI/Chart.html                                                week9-Radar Chart
+others/slider.html                                                 week9-Project-Related-1
+others/clock.html                                                  week9-Project-Related-2
+others/timezone.html                                               week9-Project-Related-3
+others/widget.html                                                 week9-Project-Related-4  
+others/div.html                                                    week10-Project-Related-5
+others/navbar.html                                                 week10-Project-Related-6
+others/tag.html                                                    week10-Project-Related-7
+others/chart.html                                                  week10-Project-Related-8
+others/services.html                                               week10-Project-Related-9

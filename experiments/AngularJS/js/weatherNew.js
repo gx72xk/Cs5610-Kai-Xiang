@@ -1,4 +1,4 @@
-﻿var app = angular.module("WeatherApp", ['ngRoute']);
+﻿ var app = angular.module("WeatherApp", ['ngRoute']);
 
 app.config(['$routeProvider',
   function ($routeProvider) {
