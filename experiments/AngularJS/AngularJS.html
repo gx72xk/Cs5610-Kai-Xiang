@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/weather.css" />
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <script src="js/weather.js"></script>
+</head>
+<body>
+        <div class="container">
+            <h1>Description</h1>
+            <p>
+                In this experiment, I've tried to use angularJS to built a framework of the page and also use its service to acquire data through api from the server out side.
+                The <code>ng</code>function is very powerful which simplified plenty of works and still reach the same goal.Things like <code>ng-app,ng-controller,ng-click,ng-show,ng-repeat</code>.
+                In this WeatherApp, you can type in the City name and get the result, I did not pick all the information from the server,just some essentials.(The result is hidden before you input something.)
+            </p>
+        </div>
+    <div ng-app="WeatherApp" ng-controller="WeatherController" class="container">
+        <hr />
+        <h1>Weather Forecast</h1>
+        <div class="col-lg-6" style="padding-left:0px;">
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" ng-model="searchByCity" placeholder="Please input City-Name">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" ng-click="searchCity()" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+        <div ng-show="visible">
+            <div class="time">
+                <h2>{{city.cityname}}</h2>
+            </div>
+            <div class="time">
+                <h2>Current</h2>
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="thead">
+                        <tr>
+                            <th>Weather</th>
+                            <th>Temperature(C)</th>
+                            <th>Feels Like(C)</th>
+                            <th>Wind Speed(miles)</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td><img src="{{city.currentcondition.weatherIconUrl[0].value}}" height="50" /><span>{{city.currentcondition.weatherDesc[0].value}}</span></td>
+                        <td>{{city.currentcondition.temp_C}}</td>
+                        <td>{{city.currentcondition.FeelsLikeC}}</td>
+                        <td>{{city.currentcondition.windspeedMiles}}</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="time">
+                <h2>Today</h2>
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="thead">
+                        <tr>
+                            <th>Weather</th>
+                            <th>Mintemp(℃)</th>
+                            <th>Maxtemp(℃)</th>
+                            <th>Wind Speed(miles)</th>
+                            <th>Sunrise</th>
+                            <th>Sunset</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="{{city.today.hourly[0].weatherIconUrl[0].value}}" height="50" /> <span>{{city.today.hourly[0].weatherDesc[0].value}}</span></td>
+                            <td>{{city.today.mintempC}}</td>
+                            <td>{{city.today.maxtempC}}</td>
+                            <td>{{city.today.hourly[0].windspeedMiles}}</td>
+                            <td>{{city.today.astronomy[0].sunrise}}</td>
+                            <td>{{city.today.astronomy[0].sunset}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="time">
+                <h2>Tomorrow</h2>
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="thead">
+                        <tr>
+                            <th>Weather</th>
+                            <th>Mintemp(℃)</th>
+                            <th>Maxtemp(℃)</th>
+                            <th>Wind Speed(miles)</th>
+                            <th>sunrise</th>
+                            <th>sunset</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="{{city.tomorrow.hourly[0].weatherIconUrl[0].value}}" height="50" /> <span>{{city.tomorrow.hourly[0].weatherDesc[0].value}}</span></td>
+                            <td>{{city.tomorrow.mintempC}}</td>
+                            <td>{{city.tomorrow.maxtempC}}</td>
+                            <td>{{city.tomorrow.hourly[0].windspeedMiles}}</td>
+                            <td>{{city.tomorrow.astronomy[0].sunrise}}</td>
+                            <td>{{city.tomorrow.astronomy[0].sunset}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr />
+        </div>
+    </div>
+  
+    <div class="container">
+        <h2>Code Snippet</h2>
+        <h3>Angular JS</h3>
+        <pre>
+            var app = angular.module("WeatherApp", []);
+            app.controller("WeatherController", function ($scope, $http) {
+            $scope.visible = false;
+            $scope.searchCity = function () {
+            var city = $scope.searchByCity;
+            $http.get("http://api.worldweatheronline.com/premium/v1/weather.ashx?num_of_days=3&q=" + city + "&tp=24&format=json&key=36c06e6c39199fdbb6b6ce4057719")
+        .success(function (response) {
+            $scope.currentcondition = response.data.current_condition[0];
+            $scope.today = response.data.weather[0]; 
+            $scope.tomorrow = response.data.weather[1];
+            $scope.cityname = response.data.request[0].query;
+            $scope.visible = true;
+        })
+    }
+});
+                                                                                                    
+</pre>
+        <h3>Html</h3>
+        <pre>
+                        &lt;h2&gt;{{city.cityname}}&lt;/h2&gt;
+            &lt;td&gt;&lt;img src=&quot;{{city.currentcondition.weatherIconUrl[0].value}}&quot; height=&quot;50&quot; /&gt;&lt;span&gt;{{city.currentcondition.weatherDesc[0].value}}&lt;/span&gt;&lt;/td&gt;
+                        &lt;td&gt;{{city.currentcondition.temp_C}}&lt;/td&gt;
+                        &lt;td&gt;{{city.currentcondition.FeelsLikeC}}&lt;/td&gt;
+                        &lt;td&gt;{{city.currentcondition.windspeedMiles}}&lt;/td&gt;
+
+             &lt;button class=&quot;btn btn-primary&quot; ng-click=&quot;searchCity()&quot; type=&quot;button&quot;&gt;Go!&lt;/button&gt;
+</pre>
+    </div>
+    <div class="container">
+        <div class="panel-footer">
+            <div class="container">
+                <div class="footer">
+                    <label>References</label><br />
+                    <a href="http://www.w3schools.com/">W3school</a><br />
+                    <a href="https://docs.angularjs.org/guide">AngularJS</a><br />
+                </div>
+                <div class="footer">
+                    <label>Source Code</label><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/AngularJS/AngularJS.html ">AngularJs.html</a><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/AngularJS/css/weather.css">weather.css</a><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/AngularJS/js/weather.js">weather.js</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

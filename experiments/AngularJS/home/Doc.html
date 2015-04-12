@@ -1,0 +1,133 @@
+﻿
+
+<div class="container">
+    <h1>Decription</h1>
+    <p class="p">In this experiment I included all of the AngularJs parts that I have learnt,its a integrated experiments, the most challenge I met is that the <code>$sce</code>service, this
+    service doesn't allow the untrusted Url, so I tried to config it to pass my Urls, buy I failed, then I just turned the whole service off,whcich is not a good way.I can improve that later.<strong>Also I did not know know to control the videos in iframe so the popup videos will keep playing after you 
+    close it,so please stop the video then click close button,I'll work on it thanks</strong> </p>
+    <h2>Code Snippet</h2>
+    <h3>Angular Route</h3>
+    <pre>
+        var app = angular.module("HomeApp", ['ngRoute']);
+app.config(['$routeProvider',
+  function ($routeProvider) {
+      $routeProvider.
+          when('/home', {
+              templateUrl: 'home/home.html',
+              controller: 'HomeController'
+          }).
+        when('/Paul', {
+            templateUrl: 'home/PaulPierce.html'
+        }).
+        when('/Kevin', {
+            templateUrl: 'home/KevinGarnett.html'
+        })
+      .
+        when('/Doc', {
+            templateUrl: 'home/Doc.html'
+        })
+  }]);                                                                                                
+</pre>
+    <h3>Angular Controller</h3>
+    <pre>var app = angular.module("HomeApp");
+app.controller("NavController", function ($scope, UserService) {
+    console.log("hello");
+    $scope.currentUser = null;
+    $scope.logout = function () {
+        $scope.currentUser = null;
+        UserService.logout();
+        $scope.username = null;
+        $scope.password = null;
+        angular.element(document.querySelector("#backhome")).attr("href", "ComingHome.html  ");
+    }
+    $scope.login = function () {
+        var username = $scope.username;
+        var password = $scope.password;
+        $scope.currentUser = UserService.login(username, password);
+        angular.element(document.querySelector("#backhome")).attr("href", "#/home");
+        console.log($scope.currentUser)
+    }
+});
+app.controller("HomeController", function ($scope, UserService) {
+    $scope.players = UserService.players
+    console.log($scope.players)
+    $scope.currentUser = UserService.getcurrentUser;
+    $scope.playVideo = function (currentPlayer) {
+        $scope.currentPlayer = currentPlayer;
+        console.log(currentPlayer);
+    }
+});
+app.config(function ($sceProvider) {
+    $sceProvider.enabled(false);
+});  
+</pre>
+    <h3>Angular Service</h3>
+    <pre>
+              var app = angular.module("HomeApp");
+app.factory("UserService", function ($location) {
+    var currentUser = null;
+    var users = [
+        { username: "kevin", password: "garnett" },
+    { username: "paul", password: "pierce" }
+    ];
+    var players = [
+        { name: "Paul Pierce", title:"Paul Pierce first came back to Boston ",description: '"A lot of emotion went into it. Going through what we went through last year, I had a lot of thoughts like, ‘Shoot, I could have just stayed in Boston"', imgUrl: "http://1.bp.blogspot.com/-dPe85WyxRSw/TljvnvziODI/AAAAAAAACMU/26SclJHmFEw/s1600/paul-pierce-celtics.jpg", videoUrl: "https://www.youtube.com/embed/Pz6FgbumXv0" },
+        { name: "Kevin Garnett", title: "Kevin Garnett returns to Minnesota", description: '"It is perferct.If you have a story, this is a fairy tale. This is a perfect ending to it. This is how you want to do it"', imgUrl: "http://www.basketballdirect.com/Images/News/100/10.Jpg", videoUrl: "https://www.youtube.com/embed/lRhZE_W_Zks" },
+        { name: "Lebron James",title:"Lebron decided to get back to Cleveland", description: '"I always believed that I d return to Cleveland and finish my career there"', imgUrl: "http://notiultimas.com/digital/images/stories/deporte/baloncesto/NBA/LEBRONJAM/lebron-james-2.jpg", videoUrl: "https://www.youtube.com/embed/z4Ta_K1n6qs" },
+    ];
+ 
+    var logout = function () {
+        currentUser = null;
+    };
+    var login = function (username, password) {
+        for (var u in users) {
+            if (users[u].username == username&&users[u].password==password) {
+                currentUser = users[u];
+                $location.path('/home');
+                return users[u];
+                
+                
+            }
+            else {
+                alert("username and password don't match!")
+            }
+        }
+        return null;
+    };
+    var getCurrentUser = function () {
+        return currentUser;
+    }
+    return {
+        players: players,
+        login: login,
+        logout: logout,
+        getCurrentUser: getCurrentUser,
+        
+    };
+})
+
+</pre>
+</div>
+<div class="container">
+    <div class="panel-footer">
+        <div class="container">
+            <div class="footer">
+                <label class="ref">References</label><br />
+                <a href="http://www.w3schools.com/">W3school</a><br />
+                <a href="https://docs.angularjs.org/guide">AngularJS</a><br />
+            </div>
+            <div class="footer">
+                <label class="ref">Source Code</label><br />
+                <a href="../../fileview/Default.aspx?~/experiments/AngularJS/ComingHome.html ">ComingHome.html</a><br />
+                <a href="../../fileview/Default.aspx?~/experiments/AngularJS/css/home.css">home.css</a><br />
+                <a href="../../fileview/Default.aspx?~/experiments/AngularJS/js/AppRoute.js">AppRoute.js</a><br />
+                <a href="../../fileview/Default.aspx?~/experiments/AngularJS/js/AppController.js">AppController.js</a><br />
+                <a href="../../fileview/Default.aspx?~/experiments/AngularJS/js/Service.js">Service.js</a><br />
+                <a href="../../fileview/Default.aspx?~/experiments/AngularJS/home/home.html">home.html</a>
+                <a href="../../fileview/Default.aspx?~/experiments/AngularJS/home/PaulPierce.html">PaulPierce.html</a>
+                <a href="../../fileview/Default.aspx?~/experiments/AngularJS/home/KevinGarnett.html">KevinGarnett.html</a>
+                <a href="../../fileview/Default.aspx?~/experiments/AngularJS/home/Doc.html">Doc.html</a>
+            </div>
+        </div>
+    </div>
+</div>

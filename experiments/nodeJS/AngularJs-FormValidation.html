@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>Description</h1>
+        <p style="font-size:20px;text-align:justify;font-family:'Comic Sans MS'">
+            In this Experiment, I am using the<code>$valid,$error,$pristine,ng-class</code>to verify that if user has meet the requirement to fill up the form, if not the border will turn red to warn the user.
+        </p><hr />
+        <img src="img/form.jpg" width="800" height="600" /><br />
+        <a href="http://nodejs-gx72xk.rhcloud.com/signup.html#/home" style="font-size:30px;">Link to Openshift</a>
+
+        <div>
+            <h1>Code Snippet</h1>
+
+            <h3>AngularJs</h3>
+            <pre> 
+                             &lt;form role=&quot;form&quot; name=&quot;userForm&quot; ng-submit=&quot;submitForm(userForm.$valid)&quot; novalidate&gt;
+                            &lt;div class=&quot;form-group&quot; ng-class=&quot;{ &#39;has-error&#39; : userForm.username.$invalid &amp;&amp; !userForm.username.$pristine }&quot;&gt;
+                                &lt;label for=&quot;username&quot;&gt;Username&lt;/label&gt;
+     &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;username&quot; placeholder=&quot;Enter Username&quot; ng-model=&quot;user.username&quot; name=&quot;username&quot; ng-minlength=&quot;3&quot; ng-maxlength=&quot;8&quot; required&gt;
+                                
+                                &lt;p ng-show=&quot;userForm.username.$error.minlength&quot; class=&quot;help-block&quot;&gt;Username is too short.&lt;/p&gt;
+                                &lt;p ng-show=&quot;userForm.username.$error.maxlength&quot; class=&quot;help-block&quot;&gt;Username is too long.&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;form-group&quot; ng-class=&quot;{ &#39;has-error&#39; : userForm.password.$invalid &amp;&amp; !userForm.password.$pristine }&quot;&gt;
+                                &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+     &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;password&quot; placeholder=&quot;Enter password&quot; ng-model=&quot;user.password&quot; name=&quot;password&quot; ng-minlength=&quot;3&quot; ng-maxlength=&quot;12&quot; required&gt;
+                                
+                                &lt;p ng-show=&quot;userForm.password.$error.minlength&quot; class=&quot;help-block&quot;&gt;Password is too short.&lt;/p&gt;
+                                &lt;p ng-show=&quot;userForm.password.$error.maxlength&quot; class=&quot;help-block&quot;&gt;Password is too long.&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;label for=&quot;password&quot;&gt;Retype Passord&lt;/label&gt;
+                                &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;password2&quot; placeholder=&quot;Retype password&quot; ng-model=&quot;user.password2&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;form-group&quot; ng-class=&quot;{ &#39;has-error&#39; : userForm.email.$invalid &amp;&amp; !userForm.email.$pristine }&quot;&gt;
+                                &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+            &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;email&quot; placeholder=&quot;Enter email&quot; ng-model=&quot;user.email&quot; name=&quot;email&quot;&gt;
+               &lt;p ng-show=&quot;userForm.email.$invalid &amp;&amp; !userForm.email.$pristine&quot; class=&quot;help-block&quot;&gt;Please Enter a valid email.&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/form&gt;
+</pre>
+        </div>
+        <div>
+            <div class="panel-footer">
+                <div class="container">
+                    <div class="footer">
+                        <label>References</label><br />
+                        <a href="https://angularjs.org/">Angular</a><br />
+                        <a href="http://passportjs.org/">PassportJS</a><br />
+                    </div>
+                    <div class="footer">
+                        <label>Source Code</label><br />
+                        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/GoogleMap.html ">flipclock.html</a><br />
+                        <a href="../../fileview/Default.aspx?~/experiments/jQueryUI/js/clock.js">clock.js</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

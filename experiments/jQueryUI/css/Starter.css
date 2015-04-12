@@ -1,0 +1,159 @@
+﻿body {
+    font-weight:bold;
+    font-family:Consolas;
+    font-size:20px;
+}
+
+.court {
+    width: 1000px;
+    height: 600px;
+    margin: auto;
+    padding: 5px;
+    background-image:url(../images/basketballcourtnewyorkk.jpg);
+    background-repeat: no-repeat;
+    -o-background-size: 100% 100%, auto;
+    -moz-background-size: 100% 100%, auto;
+    -webkit-background-size: 100% 100%, auto;
+    background-size: 100% 100%, auto;
+    background-position: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.container {
+    width: 1000px;
+    margin: auto;
+ 
+}
+.container h2{
+    text-align:left;
+}
+
+.Epg {
+
+    position: relative;
+    left: 320px;
+    top: 120px;
+}
+
+.Esg {
+
+    position: relative;
+    left: 320px;
+    top: 320px;
+}
+
+.Esf {
+
+    position: relative;
+    left: 100px;
+    top: 270px;
+}
+
+.Epf {
+
+    position: relative;
+    left: 100px;
+    top: -180px;
+}
+
+.Ec {
+
+    position: relative;
+    left: 80px;
+    top: -80px;
+}
+
+.Epg, .Esg, .Esf, .Epf, .Ec {
+    padding:0px;
+    border:1px solid black;
+    width: 79px;
+    height: 79px;
+}
+.player img{
+    width:80px;
+    height:80px;
+    border:1px solid black;
+    position:relative;
+    left:20px;
+       vertical-align:middle;
+  
+}
+.player label{
+    text-align:center;
+    vertical-align:middle;
+
+}
+.player{
+    float:left;
+    padding:0px;
+   padding-right:5px;
+   width:132px;
+
+}
+
+.Wpg {
+
+    position:relative;
+    left: 600px;
+    top: -290px;
+}
+
+.Wsg {
+
+    position: relative;
+    left: 600px;
+    top: -90px;
+}
+
+.Wsf {
+
+    position: relative;
+    left: 830px;
+    top: -140px;
+}
+
+.Wpf {
+
+    position: relative;
+    left: 820px;
+    top: -670px;
+}
+
+.Wc {
+
+    position: relative;
+    left: 840px;
+    top: -400px;
+}
+
+.Wpg, .Wsg, .Wsf, .Wpf, .Wc {
+    padding:0px;
+    border:1px solid black;
+    width:79px;
+    height: 79px;
+}
+.container1
+{
+    width:1000px;
+    height:200px;
+    margin:auto;
+}
+#longname{
+    position:relative;
+    left:10px;
+}
+.footer{
+    font-size:20px;
+    float:left;
+    padding-right:30px;
+
+}
+.doc{
+    width:1000px;
+    margin:auto;
+}
+span{
+    float:right;
+    cursor:pointer;
+}

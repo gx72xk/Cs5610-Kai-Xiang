@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Project</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="css/slider.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+      <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+      
+      <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body ng-app="ProjectApp">
+    <div ng-controller="ProjectController">
+        <!--header start-->
+        <header class="header-frontend">
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html" style="font-family: 'Oswald', sans-serif;">On The&nbsp;<span style="font-family: 'Pacifico', cursive; font-size:50px">Road</span></a>
+                    </div>
+                    <div class="navbar-collapse collapse ">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Service</a></li>
+                            <li class="dropdown ">
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Feature <b class=" icon-angle-down"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="typography.html">Typography</a></li>
+                                    <li><a href="button.html">Buttons</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="price.html">Price</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><input type="text" placeholder=" Search" class="form-control search"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--header end-->
+        <!-- Start WOWSlider.com BODY section -->
+        <div id="wowslider-container1">
+            <div class="ws_images">
+                <ul>
+                    <li><img src="data1/images/big_ben.jpg" alt="Big Ben" title="Big Ben" id="wows1_0" />London</li>
+                    <li><img src="data1/images/tower_bridge.jpg" alt="Tower Bridge" title="Tower Bridge" id="wows1_1" />London</li>
+                    <li><img src="data1/images/boston_snow.jpg" alt="Snow" title="Snow" id="wows1_2" />Boston</li>
+                    <li><img src="data1/images/charles_river.jpg" alt="Charles River" title="Charles River" id="wows1_3" />Boston</li>
+                    <li><img src="data1/images/forbidden_city.jpg" alt="slider responsive" title="The Forbidden City" id="wows1_4" />Beijing</li>
+                    <li><img src="data1/images/greatwall.jpg" alt="The Great Wall" title="The Great Wall" id="wows1_5" />Beijing</li>
+                </ul>
+            </div>
+            <div class="ws_bullets">
+                <div>
+                    <a href="#" title="Big Ben"><span><img src="data1/tooltips/big_ben.jpg" alt="Big Ben" />1</span></a>
+                    <a href="#" title="Tower Bridge"><span><img src="data1/tooltips/tower_bridge.jpg" alt="Tower Bridge" />2</span></a>
+                    <a href="#" title="Snow"><span><img src="data1/tooltips/boston_snow.jpg" alt="Snow" />3</span></a>
+                    <a href="#" title="Charles River"><span><img src="data1/tooltips/charles_river.jpg" alt="Charles River" />4</span></a>
+                    <a href="#" title="The Forbidden City"><span><img src="data1/tooltips/forbidden_city.jpg" alt="The Forbidden City" />5</span></a>
+                    <a href="#" title="The Great Wall"><span><img src="data1/tooltips/greatwall.jpg" alt="The Great Wall" />6</span></a>
+                </div><div class="ws_script" style="position:absolute;left:-99%"></div>
+
+            </div>
+            <div class="ws_shadow"></div>
+        </div>
+
+        <!-- End WOWSlider.com BODY section -->
+        <div class="container">
+            <div class="row">
+                <div class="text-center feature-head">
+                    <h1>Weather View</h1>
+                    <p>“One’s destination is never a place, but a new way of seeing things.” – <strong style="font-style:italic;color:#475168">Henry Miller</strong></p>
+                </div>
+                <div class="col-lg-4 img-rounded beijing" >
+                    <h1 class="img-rounded">BEIJING</h1>
+                    <div class=" text-center " style="padding-top:10px;">
+                        <img ng-src="{{beijing.currentcondition.weatherIconUrl[0].value}}" height="70" class="round" />
+                        <h1>{{beijing.currentcondition.temp_C}}℃</h1>
+                        <h2>{{beijing.currentcondition.weatherDesc[0].value}}</h2>
+                        <h4>Feels like:{{beijing.currentcondition.FeelsLikeC}}℃</h4>
+                        <h4>Wind:{{beijing.currentcondition.windspeedKmph}}mph|{{beijing.currentcondition.winddir16Point}}</h4>
+                        <h4>Humidity:{{beijing.currentcondition.humidity}}%</h4>
+                    </div><hr  />
+                    <div class=" text-center week-weather" >
+                        <p>{{a}}</p><span><img ng-src="{{beijing.tomorrow.hourly[0].weatherIconUrl[0].value}}" height="35" /></span><p>{{beijing.tomorrow.mintempC}}℃/{{beijing.tomorrow.maxtempC}}℃</p>
+                    </div>
+                    <div class=" text-center week-weather" >
+                        <p>{{b}}</p><span><img ng-src="{{beijing.atomorrow.hourly[0].weatherIconUrl[0].value}}" height="35" /></span><p>{{beijing.atomorrow.mintempC}}℃/{{beijing.atomorrow.maxtempC}}℃</p>
+                    </div>
+                    <div class=" text-center week-weather">
+                        <p>{{c}}</p><span><img ng-src="{{beijing.aatomorrow.hourly[0].weatherIconUrl[0].value}}" height="35" /></span><p>{{beijing.aatomorrow.mintempC}}℃/{{beijing.aatomorrow.maxtempC}}℃</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 img-rounded london" >
+                    <h1 class="img-rounded">LONDON</h1>
+                    <div class=" text-center " style="padding-top:10px;">
+                        <img ng-src="{{london.currentcondition.weatherIconUrl[0].value}}" height="70" class="round" />
+                        <h1>{{london.currentcondition.temp_C}}℃</h1>
+                        <h2>{{london.currentcondition.weatherDesc[0].value}}</h2>
+                        <h4>Feels like:{{london.currentcondition.FeelsLikeC}}℃</h4>
+                        <h4>Wind:{{london.currentcondition.windspeedKmph}}mph|{{london.currentcondition.winddir16Point}}</h4>
+                        <h4>Humidity:{{london.currentcondition.humidity}}%</h4>
+                    </div><hr  />
+                    <div class=" text-center week-weather" >
+                        <p>{{a}}</p><span><img ng-src="{{london.tomorrow.hourly[0].weatherIconUrl[0].value}}" height="35" /></span><p>{{london.tomorrow.mintempC}}℃/{{london.tomorrow.maxtempC}}℃</p>
+                    </div>
+                    <div class=" text-center week-weather" >
+                        <p>{{b}}</p><span><img ng-src="{{london.atomorrow.hourly[0].weatherIconUrl[0].value}}" height="35" /></span><p>{{london.atomorrow.mintempC}}℃/{{london.atomorrow.maxtempC}}℃</p>
+                    </div>
+                    <div class=" text-center week-weather" >
+                        <p>{{c}}</p><span><img ng-src="{{london.aatomorrow.hourly[0].weatherIconUrl[0].value}}" height="35" /></span><p>{{london.aatomorrow.mintempC}}℃/{{london.aatomorrow.maxtempC}}℃</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 img-rounded boston">
+                    <h1 class="img-rounded">BOSTON</h1>
+                    <div class=" text-center " style="padding-top:10px;">
+                        <img ng-src="{{boston.currentcondition.weatherIconUrl[0].value}}" height="70" class="round" />
+                        <h1>{{boston.currentcondition.temp_C}}℃</h1>
+                        <h2>{{boston.currentcondition.weatherDesc[0].value}}</h2>
+                        <h4>Feels like:{{boston.currentcondition.FeelsLikeC}}℃</h4>
+                        <h4>Wind:{{boston.currentcondition.windspeedKmph}}mph|{{boston.currentcondition.winddir16Point}}</h4>
+                        <h4>Humidity:{{boston.currentcondition.humidity}}%</h4>
+                    </div><hr  />
+                    <div class=" text-center week-weather" >
+                        <p>{{a}}</p><span><img ng-src="{{boston.tomorrow.hourly[0].weatherIconUrl[0].value}}" height="35" /></span><p>{{boston.tomorrow.mintempC}}℃/{{boston.tomorrow.maxtempC}}℃</p>
+                    </div>
+                    <div class=" text-center week-weather">
+                        <p>{{b}}</p><span><img ng-src="{{boston.atomorrow.hourly[0].weatherIconUrl[0].value}}" height="35" /></span><p>{{boston.atomorrow.mintempC}}℃/{{boston.atomorrow.maxtempC}}℃</p>
+                    </div>
+                    <div class=" text-center week-weather">
+                        <p>{{c}}</p><span><img ng-src="{{boston.aatomorrow.hourly[0].weatherIconUrl[0].value}}" height="35" /></span><p>{{boston.aatomorrow.mintempC}}℃/{{boston.aatomorrow.maxtempC}}℃</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--container end-->
+
+
+                <!--parallax start-->
+                <section class="parallax1">
+                    <div class="container">
+                        <div class="row">
+                            <h1>
+                                “You can either travel or read,but either your body or soul must be on the way.”  from 《Roman Holiday》
+                            </h1>
+                        </div>
+                    </div>
+                </section>
+                <!--parallax end-->
+
+                <div class="container">
+                    <!--clients start-->
+                    <div class="clients">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <ul class="list-unstyled">
+                                        <li><h2 id="current-time"></h2><canvas id="1" class="CoolClock:Tes2"></canvas><h2 class="cityname">Your Location</h2></li>
+                                        <li><h2 id="beijing-time"></h2><canvas id="2" class="CoolClock:Tor:::+8"></canvas><h2 class="cityname">Beijing</h2></li>
+                                        <li><h2 id="london-time"></h2><canvas id="3" class="CoolClock:machine:::+1"></canvas><h2 class="cityname">London</h2></li>    
+                                        <li><h2 id="boston-time"></h2><canvas id="4" class="CoolClock:Cold:::-4"></canvas><h2 class="cityname">Boston</h2></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--clients end-->
+                </div>
+                <!--container end-->
+                <!--footer start-->
+                <footer class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3">
+                                <h1>contact info</h1>
+                                <address>
+                                    <p>Address: No.28-63877 street</p>
+                                    <p>lorem ipsum city, Country</p>
+
+                                    <p>Phone : (123) 456-7890</p>
+                                    <p>Fax : (123) 456-7890</p>
+                                    <p>Email : <a href="javascript:;">support@vectorlab.com</a></p>
+                                </address>
+                            </div>
+                            <div class="col-lg-5 col-sm-5">
+                                <h1>latest tweet</h1>
+                                More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+                            </div>
+                            <div class="col-lg-3 col-sm-3 col-lg-offset-1">
+                                <h1>stay connected</h1>
+                                <ul class="social-link-footer list-unstyled">
+                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                                    <li><a href="#"><i class="icon-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
+                                    <li><a href="#"><i class="icon-skype"></i></a></li>
+                                    <li><a href="#"><i class="icon-github"></i></a></li>
+                                    <li><a href="#"><i class="icon-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!--footer end-->
+                <!-- js placed at the end of the document so the pages load faster -->
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+                <script src="js/angular-route.js"></script>
+                <script src="js/index.js"></script>
+                <script src="js/AngularService.js"></script>
+                <script src="js/jquery.js"></script>
+                <script src="js/jquery-1.11.2.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/wowslider.js"></script>
+                <script src="js/script.js"></script>
+                <script src="js/excanvas.js"></script>
+                <script src="js/coolclock.js"></script>
+                <script src="js/moreskins.js"></script>
+       
+        </div>
+</body>
+
+</html>

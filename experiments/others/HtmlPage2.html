@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/skycons.js"></script>
+</head>
+<body>
+    <canvas id="icon1" width="128" height="128"></canvas>
+   
+    <script>
+        var skycons = new Skycons({ "color": "black" });
+        // on Android, a nasty hack is needed: {"resizeClear": true}
+
+        // you can add a canvas by it's ID...
+        skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
+
+        // ...or by the canvas DOM element itself.
+        skycons.add(document.getElementById("icon2"), Skycons.RAIN);
+
+        // if you're using the Forecast API, you can also supply
+        // strings: "partly-cloudy-day" or "rain".
+
+        // start animation!
+        skycons.play();
+
+   
+    </script>
+</body>
+</html>

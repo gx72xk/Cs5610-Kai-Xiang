@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+
+        <h1>Decription</h1>
+        <p style="font-size:20px;text-align:justify;font-family:'Comic Sans MS'">
+            In this experiment I have tried to add  data from mongodb through moogoose.
+        </p>
+        <a href="http://nodejs-gx72xk.rhcloud.com/mongodb.html"> Link to My Openshift with Mongo</a>
+        <h2>Code Snippet</h2>
+        <h3>Post Method</h3>
+        <pre>
+app.post("/api/people", function (req, res) {
+    var people1 = new PeopleModel(req.body);
+    people1.save(function(err,doc) {
+        PeopleModel.find(function (err, data) {
+            res.json(data);
+        });
+    });
+    });                                                                   
+</pre>
+        <h3>Angular</h3>
+        <pre>
+             $scope.add = function (selectedPeople) {
+        console.log(selectedPeople)
+        $http.post("/api/people", selectedPeople)
+      .success(function (response) {
+          $scope.people = response;
+      });
+    };
+
+            $scope.selectedIndex = null;
+    $scope.select = function (id) {
+        $scope.selectedIndex = id;
+        $http.get("/api/people/" + id)
+        .success(function (response) {
+            $scope.selectedPeople = response
+        })
+     
+        console.log(id);
+    }                                                                 
+</pre>
+    </div>
+    <div class="container">
+        <div class="panel-footer">
+            <div class="container">
+                <div class="footer">
+                    <label>References</label><br />
+                    <a href="http://www.w3schools.com/">W3school</a><br />
+                    <a href="http://www.mongodb.org/">MongoDB</a><br />
+                </div>
+                <div class="footer">
+                    <label>Source Code</label><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/nodeJS/js/server.js">server.js</a><br />
+                    <a href="../../fileview/Default.aspx?~/experiments/nodeJS/js/people.js">people.js</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
