@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Blog</title>
+
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+   
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+</head>
+
+<body ng-app="WeatherApp">
+    <!--header start-->
+    <header class="header-frontend" ng-controller="UserController">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand brand" href="index.html" >On The&nbsp;<span>Road</span></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="weather.html">Weather</a></li>
+                        <li class="dropdown " ng-show="currentUser">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">{{currentUser.username}}<b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="mine.html">My Page</a></li>
+                                <li><a href="createPost.html">Create Post</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="blog.html">Blog</a></li>
+                        <li><a href="" ng-click="logout()" ng-show="currentUser">Logout</a></li>
+                        <li><a href="register.html" ng-show="!currentUser">Register</a></li>
+                        <li><a href="login.html" ng-show="!currentUser">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <h1>Blog</h1>
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Blog</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+    <!--container start-->
+    <div class="container" ng-controller="BlogController">
+        <div class="row">
+            <!--blog start-->
+            <div class="col-lg-9 ">
+                <div class="blog-item" ng-repeat="post in posts " >
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2">
+                            <div class="date-wrap">
+                                <span class="date">{{post.month}}/{{post.day}}</span>
+                                <span class="month">Year {{post.year}}</span>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-10 col-sm-10">
+                            <div class="blog-img">
+                                <img ng-src="{{post.img}}" alt="" />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2 text-right">
+                            <div class="author">
+                                By <a href="#">{{post.username}}</a>
+                            </div>
+                            <button class="btn btn-xs btn-danger" style="margin-right:5px;" ng-click="addToFollow(post.username,post.userPic)" ng-show="post.username!==currentUser.username"><span class="glyphicon glyphicon-heart-empty" style="position:relative;right:1px;top:2.3px;"></span>follow</button><img ng-src="{{post.userPic}}" height="50" width="50" class="img-circle" />
+
+                            <div class="shate-view">
+                                <ul class="list-unstyled">
+
+                                    <li><a href="#">{{post.place}}</a></li>
+                                    <li><a href="#">{{post.date}}</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-sm-10">
+                            <h1><a>{{post.title}}</a></h1>
+                            <p style="font-size:22px;">{{post.content}}</p>
+
+                            <hr>
+
+                            <div class="media" ng-repeat="p in post.comment">
+
+                                <h3>{{p.username}}</h3>
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" ng-src="{{p.userPic}}" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+
+                                        <span>{{p.date}}</span>
+                                    </h4>
+                                    <p style="font-size:16px;">
+                                        {{p.content}}
+                                    </p><hr>
+                                </div>
+
+                            </div>
+                            <a class="btn btn-info toggler pull-right" collapse-toggler>Post Comments</a>
+                            <div class="collapse">
+                                <div class="post-comment">
+                                    <h3 class="skills">Post Comments</h3>
+                                    <form class="form-horizontal" role="form">
+
+                                        <div class="form-group">
+                                            <div class="col-lg-12">
+                                                <textarea placeholder="comment" rows="8" class=" form-control" ng-model="newComment.content" style="font-size:16px;color:black"></textarea>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <button type="submit" class="btn btn-success btn-lg pull-right" ng-click="postComment(post._id,newComment)">Post</button>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-lg-3">
+                <div class="blog-side-item">
+                    <div class="search-row">
+                        <input type="text" class="form-control" placeholder="Search article">
+                    </div>
+                    <div class="blog-post">
+                        
+                        <h3>Followed By</h3>
+                        <div class="media" ng-repeat="u in user.fans">
+                            <a class="pull-left" href="#">
+                                <img class=" img-rounded" ng-src="{{u.userPic}}" height="60" width=60 alt="">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="media-heading" >{{u.username}}</h5>
+
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+
+
+                    <div class="blog-post">
+                        <h3>Follow</h3>
+                        <div class="media" ng-repeat="u in user.followed">
+                            <a class="pull-left" href="#">
+                                <img class=" img-rounded" ng-src="{{u.userPic}}" height="60" width=60 alt="">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="media-heading">{{u.username}}</h5>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tags">
+                        <h3>Tags</h3>
+                        <ul class="list-unstyled tag">
+                            <li style="background:#F9D423"><a href="#">Sunset</a></li>
+                            <li style="background:#b6fbff"><a href="#"> Coast</a></li>
+                            <li style="background:#6A9113"><a href="#"> Forest</a></li>
+                            <li style="background:#abbaab"><a href="#"> Mountain</a></li>
+                            <li style="background:#0072ff"><a href="#"> Oecan</a></li>
+                            <li style="background:#D1913C"><a href="#"> Island</a></li>
+                            <li style="background:#29323c"><a href="#"> Night</a></li>
+               
+                        </ul>
+                    </div>
+
+
+                    <div class="archive">
+                        <h3>Archive</h3>
+                        <ul class="social-link-footer list-unstyled">
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-youtube-play"></i></a></li>
+
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-github"></i></a></li>
+                            <li><a href="#"><i class="icon-google-plus"></i></a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!--blog end-->
+        </div>
+
+    </div>
+    <!--container end-->
+    <!--footer start-->
+    <footer class="footer" ng-controller="UserController">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-3">
+                    <h1><a href="home.html">Home</a></h1>
+                    <h1><a href="weather.html">Weather</a></h1>
+                    <h1><a ng-click="checkLoggedin()">Blog</a></h1>
+                    <h1><a href="register.html">Register</a></h1>
+                    <h1 ng-show="!currentUser"><a href="login.html">Login</a></h1>
+                </div>
+                <div class="col-lg-5 col-sm-5">
+                    <h1 ng-show="currentUser"><a>Hello {{currentUser.username}}!</a></h1>
+                    <h1 ng-show="currentUser" ng-click="logout()"><a>Click to Logout</a></h1>
+                    <h1>&nbsp;</h1>
+                    <h1>&nbsp;</h1>
+
+
+
+                </div>
+                <div class="col-lg-3 col-sm-3 col-lg-offset-1">
+
+                    <h4 style="font-style:italic">Welcome By @Kai</h4>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer end-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Register</title>
+
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/register.css" rel="stylesheet" />
+     <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>  
+      
+    
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    
+
+
+  </head>
+
+<body ng-app="WeatherApp" ng-controller="UserController">
+    <!--header start-->
+    <header class="header-frontend">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand brand" href="index.html" >On The&nbsp;<span>Road</span></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="home.html">Weather</a></li>
+                        <li class="dropdown " ng-show="currentUser">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">{{currentUser.username}}<b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="mine.html">My Page</a></li>
+                                <li><a href="createPost.html">Create Post</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" ng-click="checkLoggedin()">Blog</a></li>
+                        <li><a href="" ng-click="logout()" ng-show="currentUser">Logout</a></li>
+                        <li class="active"><a href="register.html" ng-show="!currentUser">Register</a></li>
+                        <li><a href="login.html" ng-show="!currentUser">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs" style="margin-bottom:0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <h1>Register</h1>
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Register</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+    <!--register-->
+    <div class="formcover">
+        <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="smart-register">
+            <h1>
+                Register
+
+            </h1>
+           
+                <label>
+                    <span>Username:</span>
+                    <input id="usernameInRegister" type="text" name="username" placeholder="Username" ng-model="user.username" />
+                </label>
+         
+            
+                <label>
+                    <span>Password :</span>
+                    <input id="password" type="password" placeholder="Password" ng-model="user.password" name="password" />
+                   
+                </label>
+        
+               
+           
+                <label>
+                    <span>Retype Password :</span>
+                    <input id="password1" type="password" placeholder="Retype Password" ng-model="user.password2" name="password1" />
+                </label>
+           
+                <label>
+                    <span>Your Email :</span>
+                    <input id="email" type="email" name="email" placeholder="Email" ng-model="user.email" />
+                </label>
+                
+            
+                <label>
+                    <span>HeadPoster ImgUrl:</span>
+                    <input id="HeadPoster" type="text" placeholder="Img Url" ng-model="user.pic" name="url" />
+                </label>
+               
+                <label class="pull-right">
+                    <span>&nbsp;</span>
+                    <input type="button" class="button" value="Register" ng-click="register(user)" />
+                </label>
+</form>
+    </div>
+
+
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

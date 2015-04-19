@@ -1,0 +1,287 @@
+html,body{
+	margin:0px;
+	padding:0px;
+    background-image: url(../img/ws_Blurred_City_Lights_1920x1080.jpg);
+	
+    
+    background-repeat: no-repeat;
+            background-position: 0px 0px, center;
+            background-attachment: fixed;
+            -o-background-size: 100% 100%, auto;
+            -moz-background-size: 100% 100%, auto;
+            -webkit-background-size: 100% 100%, auto;
+            background-size: 100% 100%, auto;height:760px;
+}
+h3 {
+	text-align: center;
+	font-family: georgia;
+	color: #727272;
+	border-bottom: 1px solid #EEE;
+	padding: 5px;
+	font-size: x-large;
+	margin-top: 50px;
+}
+
+
+
+/*######## Smart login ########*/
+.smart-green {
+	margin-left:auto;
+	margin-right:auto;
+
+    max-width: 500px;
+    background: #F8F8F8;
+    padding: 30px 30px 20px 30px;
+    font-size: 24px;
+    font-family:'Comic Sans MS';
+    color: #666;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    height:630px;
+}
+#loginform{
+    height:400px;
+}
+.smart-green h1 {
+    font-size:48px;
+    font-family:'Comic Sans MS';
+    padding: 20px 0px 20px 40px;
+    display: block;
+    margin: -30px -30px 10px -30px;
+    color: #FFF;
+  background: -webkit-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  background:    -moz-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  background:     -ms-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  background:      -o-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  background:         linear-gradient(90deg, #43cea2 10%, #185a9d 90%);
+        
+    text-shadow: 1px 1px 1px #949494;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-bottom:1px solid #89AF4C;
+
+}
+.smart-green h1>span {
+    display: block;
+    font-size: 15px;
+    color: #FFF;
+}
+
+.smart-green label {
+    display: block;
+    margin: 0px 0px 5px;
+    margin-top:15px;
+}
+.smart-green label>span {
+    float: left;
+    margin-top: 10px;
+    color: #5E5E5E;
+}
+.smart-green input[type="text"], .smart-green input[type="email"], .smart-green input[type="password"],.smart-green textarea, .smart-green select {
+    color: #555;
+    height: 50px;
+	line-height:15px;
+    width: 100%;
+    padding: 0px 0px 0px 10px;
+    margin-top: 2px;
+    border: 1px solid #E5E5E5;
+    background: #FBFBFB;
+    outline: 0;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    font: normal 18px/18px Arial, Helvetica, sans-serif;
+}
+
+.smart-green .button {
+    background-color: #73C8A9;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-border-radius: 5px;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #949494;
+}
+.smart-green .button:hover {
+    background-color: #185a9d;
+}
+
+/*smart register*/
+.smart-register {
+	margin-left:auto;
+	margin-right:auto;
+    max-width: 500px;
+    background: #F8F8F8;
+    padding: 30px 30px 20px 30px;
+    font-size: 17px;
+    font-family:'Comic Sans MS';
+    color: #666;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    height:550px;
+}
+.smart-register h1 {
+    font-size:30px;
+    font-family:'Comic Sans MS';
+    padding: 20px 0px 20px 40px;
+    display: block;
+    margin: -30px -30px 10px -30px;
+    color: #FFF;
+  background: -webkit-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #43cea2 10%, #185a9d 90%); /* W3C */
+        
+    text-shadow: 1px 1px 1px #949494;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-bottom:1px solid #89AF4C;
+
+}
+.smart-register h1>span {
+    display: block;
+    font-size: 15px;
+    color: #FFF;
+}
+
+.smart-register label {
+    display: block;
+    margin: 0px 0px 5px;
+    
+}
+.smart-register label>span {
+    float: left;
+    margin-top: 10px;
+    color: #5E5E5E;
+}
+.smart-register input[type="text"], .smart-register input[type="email"], .smart-register input[type="password"] {
+    color: #555;
+    height: 40px;
+	line-height:15px;
+    width: 100%;
+    padding: 0px 0px 0px 10px;
+    margin-top: 2px;
+    border: 1px solid #E5E5E5;
+    background: #FBFBFB;
+    outline: 0;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    font: normal 15px/15px Arial, Helvetica, sans-serif;
+}
+
+.smart-register .button {
+    background-color: #73C8A9;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-border-radius: 5px;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #949494;
+    margin-top:10px;
+}
+.smart-register .button:hover {
+    background-color: #185a9d;
+}
+/* form register login*/
+.formcover{
+    padding-top:50px;padding-bottom:60px;
+  
+}
+
+
+/* #### bootstrap Form #### */
+.bootstrap-frm {
+	margin-left:auto;
+	margin-right:auto;
+
+    max-width: 500px;
+    background: #FFF;
+    padding: 20px 30px 20px 30px;
+    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #888;
+    text-shadow: 1px 1px 1px #FFF;
+    border:1px solid #DDD;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.bootstrap-frm h1 {
+    font: 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom: 1px solid #DADADA;
+    margin: -10px -30px 30px -30px;
+    color: #888;
+}
+.bootstrap-frm h1>span {
+    display: block;
+    font-size: 11px;
+}
+.bootstrap-frm label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+.bootstrap-frm label>span {
+    float: left;
+	width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+.bootstrap-frm input[type="text"], .bootstrap-frm input[type="email"], .bootstrap-frm textarea, .bootstrap-frm select{
+    border: 1px solid #CCC;
+    color: #888;
+    height: 20px;
+	line-height:15px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 5px 0px 5px 5px;
+    width: 70%;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;    
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.bootstrap-frm select {
+    background: #FFF url('down-arrow.png') no-repeat right;
+    background: #FFF url('down-arrow.png') no-repeat right;
+    appearance:none;
+    -webkit-appearance:none; 
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 70%;
+    height: 35px;
+	line-height:15px;
+}
+.bootstrap-frm textarea{
+    height:100px;
+	padding: 5px 0px 0px 5px;
+	width: 70%;
+}
+.bootstrap-frm .button {
+    background: #FFF;
+    border: 1px solid #CCC;
+    padding: 10px 25px 10px 25px;
+    color: #333;
+    border-radius: 4px;
+}
+.bootstrap-frm .button:hover {
+    color: #333;
+    background-color: #EBEBEB;
+    border-color: #ADADAD;
+}
+

@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+      <link href="css/register.css" rel="stylesheet" />
+      <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+  </head>
+
+<body ng-app="WeatherApp" ng-controller="UserController">
+     <!--header start-->
+    <header class=" header-frontend">
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand brand" href="index.html" >On The&nbsp;<span>Road</span></a>
+            </div>
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li class="dropdown " ng-show="currentUser">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">{{currentUser.username}}<b class=" icon-angle-down"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mine.html">My Page</a></li>
+                            <li><a href="createPost.html">Create Post</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" ng-click="checkLoggedin()">Blog</a></li>
+                    <li><a href="" ng-click="logout()" ng-show="currentUser">Logout</a></li>
+                    <li><a href="register.html" ng-show="!currentUser">Register</a></li>
+                    <li class="active"><a href="login.html" ng-show="!currentUser">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </header>
+    <!--header end-->
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs" style="margin-bottom:0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <h1>Login</h1>
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Login</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+    <div class="formcover">
+        <form action="" method="post" class="smart-green" id="loginform">
+            <h1>
+                Login
+
+            </h1>
+            <label>
+                <span>Username:</span>
+                <input id="name" type="text" name="name" placeholder="Your UserName" ng-model="u.username" />
+            </label>
+
+            <label>
+                <span>Password :</span>
+                <input id="password" type="Password" name="Password" placeholder="Password" ng-model="u.password" />
+            </label>
+
+
+            <label class="pull-right">
+                <span>&nbsp;</span>
+                <input type="button" class="button" value="Submit" ng-click="login(u)" />
+            </label>
+        </form>
+    </div>
+
+
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    
+    <script src="js/user.js"></script>
+    <script src="js/AngularService.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

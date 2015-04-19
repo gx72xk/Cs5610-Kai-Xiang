@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>My</title>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+</head>
+
+<body ng-app="WeatherApp">
+    <!--header start-->
+    <header class="header-frontend" ng-controller="UserController">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand brand" href="index.html">On The&nbsp;<span>Road</span></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="weather.html">Weather</a></li>
+                        <li class="dropdown active" ng-show="currentUser">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">{{currentUser.username}}<b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="mine.html">My Page</a></li>
+                                <li><a href="createPost.html">Create Post</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" ng-click="checkLoggedin()">Blog</a></li>
+                        <li><a href="" ng-click="logout()" ng-show="currentUser">Logout</a></li>
+                        <li><a href="register.html" ng-show="!currentUser">Register</a></li>
+                        <li><a href="login.html" ng-show="!currentUser">Login</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <h1>Blog</h1>
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Blog</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+    <!--container start-->
+    <div class="container" ng-controller="BlogController">
+        <div class="row">
+            <!--blog start-->
+            <div class="col-lg-9 ">
+                <div class="blog-item" ng-repeat="post in posts |filter:{username:currentUser.username}">
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2">
+                            <div class="date-wrap">
+                                <span class="date">{{post.month}}/{{post.day}}</span>
+                                <span class="month">Year {{post.year}}</span>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-10 col-sm-10">
+                            <div class="blog-img">
+                                <img ng-src="{{post.img}}" alt="" />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2 text-right">
+                            <div class="author">
+                                By <a href="#">{{post.username}}</a>
+                            </div>
+                            <img ng-src="{{post.userPic}}" height="50" width="50" class="img-circle" />
+
+                            <div class="shate-view">
+                                <ul class="list-unstyled">
+
+                                    <li><a href="javascript:;">{{post.place}}</a></li>
+                                    <li><a href="javascript:;">{{post.date}}</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-sm-10">
+                            <buttoon class="btn btn-danger pull-right" style="margin-top:20px;" ng-click="deletePost(post._id)"><span class="glyphicon glyphicon-remove"></span></buttoon>
+                            <h1><a href="#">{{post.title}}</a></h1>
+                            <p style="font-size:22px;">{{post.content}}</p>
+
+                            <a class="btn btn-info toggler" collapse-toggler><i class="icon-eye-open"></i>Comments</a><hr>
+
+                            <div class="media collapse" ng-repeat="p in post.comment">
+
+                                <h3>{{p.username}}</h3>
+                                <a class="pull-left">
+                                    <img class="media-object" ng-src="{{p.userPic}}" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+
+                                        <span>{{p.date}}</span><buttoon class="btn btn-danger pull-right" style="margin-top:20px;" ng-click="deleteComment(post._id,$index)"><span class="glyphicon glyphicon-remove"></span></buttoon>
+                                    </h4>
+                                    <p style="font-size:16px;">
+                                        {{p.content}}
+                                    </p><hr>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="col-lg-3">
+                <div class="blog-side-item">
+                    <div class="search-row">
+                        <img class="img-rounded" ng-src="{{user.pic}}" height="100" />
+                        <h3 style="font-size:50px;">{{user.username}}</h3>
+                    </div>
+                    <div class="blog-post">
+                        <hr />
+                        <h3>Followed By</h3>
+                        <div class="media" ng-repeat="u in user.fans">
+                            <a class="pull-left" href="javascript:;">
+                                <img class=" img-rounded" ng-src="{{u.userPic}}" height="60" width=60 alt="">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="media-heading">{{u.username}}</h5>
+
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+
+                    <div class="blog-post">
+                        <h3>Follow</h3>
+                        <div class="media" ng-repeat="u in user.followed">
+                            <a class="pull-left" href="#">
+                                <img class=" img-rounded" ng-src="{{u.userPic}}" height="60" width=60 alt="">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="media-heading">{{u.username}}</h5>
+
+                            </div>
+                        </div>
+
+                    </div><hr />
+
+                    <div class="tags">
+                        <h3>Favority Cities</h3>
+                        <ul class="list-unstyled tag">
+                            <li ng-repeat="u in user.favoriteCity" class=" btn-primary img-thumbnail" style="font-size:13px;cursor:pointer;padding:3px 5px;">{{u.cityname}}</li>
+
+                        </ul>
+                    </div><hr />
+
+
+                    <div class="archive">
+
+                        <button class="btn btn-round btn-success" collapse-toggler><i class="icon-refresh"></i>Click to Update Profile</button>
+                        <div class="contact-form collapse">
+                            <form role="form">
+                                <div class="form-group">
+                                    <h3>{{user.username}}</h3>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">New Password</label>
+                                    <input type="password" placeholder="" class="form-control " ng-model="loginUser.password">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">New Email</label>
+                                    <input type="email" class="form-control" ng-model="loginUser.email">
+                                </div>
+                                
+                                <button class="btn btn-danger pull-right" type="submit" ng-click="updateUser(loginUser)">Submit</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!--blog end-->
+        </div>
+
+    </div>
+    <!--container end-->
+    <!--footer start-->
+    <footer class="footer" ng-controller="UserController">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-3">
+                    <h1><a href="home.html">Home</a></h1>
+                    <h1><a href="weather.html">Weather</a></h1>
+                    <h1><a ng-click="checkLoggedin()">Blog</a></h1>
+                    <h1><a href="register.html">Register</a></h1>
+                    <h1 ng-show="!currentUser"><a href="login.html">Login</a></h1>
+                </div>
+                <div class="col-lg-5 col-sm-5">
+                    <h1 ng-show="currentUser"><a>Hello {{currentUser.username}}!</a></h1>
+                    <h1 ng-show="currentUser" ng-click="logout()"><a>Click to Logout</a></h1>
+                    <h1>&nbsp;</h1>
+                    <h1>&nbsp;</h1>
+
+
+
+                </div>
+                <div class="col-lg-3 col-sm-3 col-lg-offset-1">
+                    <h1>Redirection</h1>
+                    <ul class="social-link-footer list-unstyled">
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+
+                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-github"></i></a></li>
+
+                    </ul>
+                    <h4 style="font-style:italic">Welcome By @Kai</h4>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer end-->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
